@@ -1,0 +1,21 @@
+<!-- templates/home.html -->
+{% extends 'messenger/base.html' %}
+
+{% block title %}Messages{% endblock title %}
+
+{% block content %}
+  {% if latest_messages %}
+    {% for message in object_list %}
+    <div class="message">
+      <font class="message-time">{{ message.pub_time }}</font>
+      <font class="message-text">{{ message.message_text }}</font>  
+    </div
+    {% endfor %}
+  {% else %}
+      <p>No messages yet. Post the fist just now!</p>
+  {% endif %}
+{% endblock content %}
+
+{% block footer %}
+Real footer
+{% endblock footer %}
