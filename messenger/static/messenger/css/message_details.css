@@ -1,0 +1,16 @@
+.message_container {
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.message_edit_link {
+    font-size: 8pt;
+    color: #999;
+    text-decoration: none;
+}
+
+.message_edit_link:hover {
+    text-decoration: underline;
+}

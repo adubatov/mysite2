@@ -1,18 +1,29 @@
 <!-- templates/base.html -->
+{% load static %} 
+<!DOCTYPE html>
 <html> 
     <head>
+        <meta http-equiv="cache-control" content="no-cache" />
+        <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:400" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="{% static 'messenger/css/base.css' %}">
+        {% block styles %}{% endblock styles %}
         <title>{% block title %}Messenger{% endblock title %}</title>
     </head>
     <body> 
         <header>
-            <h1><a href="{% url "messenger:messages" %}">Django blog</a></h1>
+            <div class="nav_left">
+                <h1><a href="{% url 'messenger:messages' %}">Django blog</a></h1>
+            </div>
+            <div class="nav_right">
+                <a href="{% url 'messenger:new_message' %}">New message</a>
+            </div>
         </header>
-        <div>
+        <div class="content">
             {% block content %}
             {% endblock content %}
         </div>
         <footer>
-            {% block footer %}Footer placeholder{% endblock footer %}
+            {% block footer %}{% endblock footer %}
         </footer>
     </body>
 </html>

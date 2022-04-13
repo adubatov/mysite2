@@ -1,21 +1,42 @@
 <!-- templates/home.html -->
 {% extends 'messenger/base.html' %}
+{% load static %}
 
 {% block title %}Messages{% endblock title %}
+{% block styles %}<link rel="stylesheet" href="{% static 'messenger/css/messages.css' %}">{% endblock styles %}
 
+<div class="content">
 {% block content %}
+<div class="messages">
   {% if latest_messages %}
     {% for message in object_list %}
-    <div class="message">
-      <font class="message-time">{{ message.pub_time }}</font>
-      <font class="message-text">{{ message.message_text }}</font>  
-    </div
+
+    <div class="message" onclick="location.href='{% url 'messenger:message_details' message.id %}'">
+
+      <div class="message-header">
+        <a class="user-link" href="{% url 'messenger:user' message.author.id %}">
+          <img class='message-logo' src="{% static 'messenger/images/logo.gif' %}">
+        </a>
+        <div class="message-subheader">
+          <a class="user-link" href="{% url 'messenger:user' message.author.id %}">{{ message.author }}</a>
+          <font class="message-time">{{ message.pub_time|date:"H:i:s j.m.y" }}</font>
+        </div>
+      </div>
+
+      <div class="message-body">
+        <font class="message-text">{{ message.message_preview }}</font>
+      </div>
+
+    </div>
+
     {% endfor %}
   {% else %}
       <p>No messages yet. Post the fist just now!</p>
   {% endif %}
+  </div>
 {% endblock content %}
+</div>
 
 {% block footer %}
-Real footer
+
 {% endblock footer %}

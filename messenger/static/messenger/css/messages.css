@@ -1,0 +1,48 @@
+
+.messages {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: auto;
+}
+
+.message {
+    flex: 1;
+    display: block;
+    padding: 10px;
+}
+
+.message:hover {
+    background-color: #eee;
+}
+
+.message-header {
+    display: flex;
+    flex-direction: row;
+}
+
+.message-subheader {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.message-time {
+    color: #888;
+    font-size: 9pt;
+}
+
+.message-logo {
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+}
+
+.message-body {
+    padding: 10px;
+}
+
+.message-text {
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 15px;
+}

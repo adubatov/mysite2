@@ -1,0 +1,15 @@
+{% extends 'messenger/base.html' %}
+{% load static %}
+
+{% block title %}Message details{% endblock title %}
+
+{% block styles %}<link rel="stylesheet" href="{% static 'messenger/css/message_details.css' %}">{% endblock styles %}
+
+{% block content %}
+<div class="message_container">
+<font class="message_text">{{ message.message_text }}</font>
+</div>
+<div>
+    <a href="{% url 'messenger:message_edit' message.id %}" class="message_edit_link">Edit</a>
+</div>
+{% endblock content %}

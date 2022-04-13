@@ -1,0 +1,10 @@
+{% extends 'messenger/base.html' %}
+
+{% block title %}Create new message{% endblock title%}
+
+{% block content %}
+<form id="new_message" method="post" action="">{% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Post">
+</form>
+{% endblock content %}

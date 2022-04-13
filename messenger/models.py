@@ -1,4 +1,5 @@
 from django.db import models
+from django.urls import reverse
 
 # Create your models here.
 class User(models.Model):
@@ -9,6 +10,10 @@ class User(models.Model):
 
     def __str__(self):
         return f'{self.first_name} {self.last_name}'
+
+    def get_absolute_url(self):
+        return reverse("user", kwargs={"pk": self.pk})
+    
 
 class Message(models.Model):
     message_text = models.TextField(max_length=1000)
@@ -22,3 +27,14 @@ class Message(models.Model):
         if len(self.message_text) > text_crop_length:
             dots = '...'
         return self.message_text[:text_crop_length] + dots
+
+    def get_absolute_url(self):
+        return reverse("messenger:message_details", kwargs={"pk": self.pk})
+
+    def message_preview(self):
+        N = 20
+        dots = ''
+        if len(self.message_text) > N: 
+            dots = '...'
+        return self.message_text[:50] + dots
+    

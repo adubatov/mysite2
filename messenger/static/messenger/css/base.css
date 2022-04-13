@@ -1,0 +1,43 @@
+body {
+    font-family: 'Source Sans Pro', sans-serif; 
+    font-size: 18px;
+    background-color: #eee;
+}
+
+header {
+    border-bottom: 1px solid #999; 
+    margin-bottom: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+header h1 a {
+    color: red; 
+    text-decoration: none;
+}
+
+.nav_left { 
+    margin-right: auto;
+    display: flex;
+}
+
+.nav_right { 
+    display: flex; 
+    padding-top: 2rem;
+}
+
+/* div {
+    display: flex;
+} */
+
+.content {
+    display: flex;
+    width: 70%;
+    margin: auto;
+    background-color: #fff;
+    padding: 10px;
+}
+
+.new_message {
+
+}
