@@ -18,6 +18,14 @@
                 <a href="{% url 'messenger:new_message' %}">New message</a>
             </div>
         </header>
+
+        {% if user.is_authenticated %}
+            <p>Hi, {{ user.first_name }} {{ user.last_name }}{% if not user.first_name and not user.last_name%}{{ user.username  }}{% endif %}</p>
+            <a href="{% url 'logout' %}">Log out</a>
+        {% else %}
+            <a href="{% url 'login' %}">Log in</p></a>
+        {% endif %}
+
         <div class="content">
             {% block content %}
             {% endblock content %}

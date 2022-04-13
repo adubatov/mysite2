@@ -29,7 +29,7 @@ class NewMessageView(generic.CreateView):
 class MessageEditView(generic.UpdateView):
     model = Message
     template_name = 'messenger/message_edit.html'
-    fields =['message_text', 'author']
+    fields =['message_text', ]
 
 
 class MessageDetailsView(generic.DetailView):

@@ -16,6 +16,15 @@ header h1 a {
     text-decoration: none;
 }
 
+a {
+    color: rgb(42, 51, 96);
+    font-size: 10pt;
+}
+
+a:visited {
+    color: rgb(42, 51, 96)
+}
+
 .nav_left { 
     margin-right: auto;
     display: flex;
